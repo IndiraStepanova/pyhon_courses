@@ -27,5 +27,4 @@ def memo(f):
 #4 можно использовать lru_cache из стандартной библ python
 from functools import lru_cache
 fib_1 = lru_cache(maxsize=None)(fib_1)
-
-print(fib_1(800))
+print(fib_1(80))
