@@ -1,5 +1,4 @@
 import random
-import timing as t
 
 def test(gcd, n_iter=100): 
     for i in range(n_iter):
