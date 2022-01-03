@@ -50,5 +50,4 @@ def gcd4(a, b):
         return max(a, b)
     return gcd4(b % a, a)
 
-#test(gcd4)
 

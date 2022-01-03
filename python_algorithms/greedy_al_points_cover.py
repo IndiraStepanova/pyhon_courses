@@ -1,15 +1,3 @@
-def pointsCover(s):
-    s.sort()
-    i = 1
-    result = []
-    while i < len(s):
-        lr = [s[i], s[i]+1]
-        result.append(lr)
-        i += 1
-        while i < len(s) and s[i] <= max(lr):
-            i += 1
-    return result
-
 segments = []
 cnt_of_segments = int(input())
 for i in range(1, cnt_of_segments+1):
