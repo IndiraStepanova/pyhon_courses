@@ -1,0 +1,67 @@
+'''class Store:
+    def __init__(self, name):
+     self.name = name
+     self.items = []
+            # You'll need 'name' as an argument to this method.
+            # Then, initialise 'self.name' to be the argument, and 'self.items' to be an empty list.
+    
+    def add_item(self, name, price):
+        item = {"name": name, "price": price}
+        self.items.append(item)
+        print(self.items)
+            
+            # Create a dictionary with keys name and price, and append that to self.items.
+    
+    def stock_price(self):
+        total = 0
+        for item in self.items:
+            total += item["price"]
+        print(total)
+            # Add together all item prices in self.items and return the total.
+
+store = Store("Amazon")
+store.add_item("note", 88)
+store.stock_price()
+store.add_item("pen", 7)
+store.stock_price()
+store.add_item("pencil", 17)
+store.stock_price()
+'''
+
+class Store:
+    def __init__(self, name):
+        self.name = name
+        self.items = []
+
+    def add_item(self, name, price):
+        self.items.append({
+            'name': name,
+            'price': price
+        })
+
+    def stock_price(self):
+        total = 0
+        for item in self.items:
+            total += item['price']
+        return total
+
+    @classmethod
+    def franchise(cls, store):
+        return Store(store.name + "- franchise")
+        # Return another store, with the same name as the argument's name, plus " - franchise"
+
+    @staticmethod
+    def store_details(store):
+        total_stock_price = int(store.stock_price())
+        return '{}, total stock price: {}'.format(store.name, total_stock_price)
+        # Return a string representing the argument
+        # It should be in the format 'NAME, total stock price: TOTAL'
+
+store = Store("Test")
+store2 = Store("Amazon")
+store2.add_item("Pen", 15)
+
+store.franchise(store)
+print(Store.franchise(store2))
+print(Store.store_details(store))
+print(Store.store_details(store2))
