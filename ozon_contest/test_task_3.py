@@ -13,3 +13,25 @@
 2 = 656 - 654
 7 = 5555 - 5548'''
 
+def polyndrom(current):
+    lelf_part = 0
+    right_part = len(current)-1
+    while lelf_part <= right_part:
+        if current[lelf_part] == current[right_part]:
+            lelf_part += 1
+            right_part -= 1
+            return True
+        return False
+      
+current_order = input()
+ini_current_order = int(current_order)
+while polyndrom(current_order) == False:
+    int_CO = int(current_order)
+    int_CO += 1
+    current_order = str(int_CO)
+last = int(current_order)
+result = last - ini_current_order
+print(result)
+
+
+
