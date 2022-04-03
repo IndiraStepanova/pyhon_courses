@@ -11,11 +11,40 @@ s' лексикографически меньше, чем t'
 
 Для каждой пары строк si, ti определите правда ли, что si анаграммно меньше чем ti."""
 
+def rule(first_part, sec_part):
+    first_simbol = 0
+    sec_simbol = 0
+    while first_simbol <= sec_simbol:
+        if first_part[first_simbol] > sec_part[sec_simbol]:
+            first_simbol += 1
+            sec_simbol += 1
+        else:
+            return False
+        return True
 
-import re
+def good_password(lenght, f_part, s_part):
+    cnt =0
+    while cnt <= lenght:
+        if rule(f_part, s_part):
+            cnt += 1
+        else:
+            return False
+        return True
+
+pairs = int(input())
+cnt = 0
+while cnt <= pairs:
+    pairs = int(input())
+    if good_password(2, "bc", "ca") == True:
+        print ("Yes")
+    else:
+        print("No")
+    cnt += 1
 
 
-def good_password(lenght, first_part, sec_part):
+    
+
+
  
  
 
