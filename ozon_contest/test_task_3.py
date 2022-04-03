@@ -31,8 +31,8 @@ while polyndrom(current_order) == False:
     int_CO = int(current_order)
     int_CO += 1
     current_order = str(int_CO)
-    last = int(current_order)
-    result = last - ini_current_order
+last = int(current_order)
+result = last - ini_current_order
 print(result)
 
 
